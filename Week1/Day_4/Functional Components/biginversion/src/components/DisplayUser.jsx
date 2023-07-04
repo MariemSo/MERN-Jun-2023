@@ -1,11 +1,12 @@
 import React from 'react'
 
-const DisplayUser = ({newUser})=> {
+
+const DisplayUser = (props)=> {
   return (
-    <div>{JSON.stringify(newUser)}
-        <p>User Name:{username}</p>
-        <p>Email</p>
-        <p>Password</p>
+    <div>
+        <p>User Name: {props.newUser.username}</p>
+        <p>Email {props.newUser.email}</p>
+        <p>Password {props.newUser.password}</p>
     </div>
   )
 }

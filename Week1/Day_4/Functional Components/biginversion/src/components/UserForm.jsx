@@ -1,19 +1,19 @@
 import React, { useState } from  'react';
 import DisplayUser from './DisplayUser';
 
-const UserForm = (props) => {
+const UserForm = () => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [newUser, setNewUser]=useState({
-        userName:"",
+        username:"",
         email:"",
         password:"",
     });
     const createUser=(e) =>{
         e.preventDefault();
         const newUser={username, email,password};
-        setNewUser(newUser);
+        setNewUser(newUser)
     }
 
     return(
@@ -29,7 +29,7 @@ const UserForm = (props) => {
                 </div>
                 <div>
                     <label>Password: </label>
-                    <input  onChange={ (e) => setPassword(e.target.value)} value ={ password}  />
+                    <input  onChange={ (e) => setPassword(e.target.value)} value ={password}  />
                 </div>
                 <button>Create</button>
             </form>
