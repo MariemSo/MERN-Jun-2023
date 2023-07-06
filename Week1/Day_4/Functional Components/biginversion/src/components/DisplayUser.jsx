@@ -9,7 +9,7 @@ const DisplayUser = (props)=> {
         <p>Last Name: {props.newUser.lastName}</p>
         <p>Email: {props.newUser.email}</p>
         <p>Password: {props.newUser.password}</p>
-        <p>Confirm Password: {props.newUser.password}</p>
+        <p>Confirm Password: {props.newUser.confPassword}</p>
     </div>
   )
 }
