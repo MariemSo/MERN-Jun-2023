@@ -58,7 +58,7 @@ const UserForm = (props) => {
             setConfPasswordError("");
         } else {
             setPasswordError("");
-            if(confPassword && confPassword != e.target.value) {
+            if(confPassword && confPassword !== e.target.value) {
                 setConfPasswordError("Password must Match");
             } else {
                 setConfPasswordError("");
@@ -70,7 +70,7 @@ const UserForm = (props) => {
 
     const ConfPasswordValidation= (e) => {
         setConfPassword(e.target.value);
-        if(password != e.target.value) {
+        if(password !== e.target.value) {
             setConfPasswordError("Password must Match");
         } else {
             setConfPasswordError("");
