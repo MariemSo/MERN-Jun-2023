@@ -23,9 +23,9 @@ const Box = () => {
             <label>Color:</label>
             <input type='text' onChange={ (e) => setBgColor(e.target.value) } value={ bgcolor } />
             <input type='submit' value="Add"/>
-        </form>
+        </form><br />
         {boxes.map((boxColor, i)=>
-        <div key={i} style={{...styleBox, backgroundColor: boxColor}}></div>
+        <span key={i} style={{...styleBox, backgroundColor: boxColor}}></span>
         )}
       </>
     );
