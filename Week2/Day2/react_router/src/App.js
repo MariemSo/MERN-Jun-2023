@@ -1,25 +1,68 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import {
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-function App() {
+const Home = (props) => { 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="App">Welcome</h1>
     </div>
   );
 }
 
-export default App;
+const RouteNum=(props)=>{
+  const {element}=useParams();
+  const {bgcolor}=useParams();
+  const {color}=useParams();
+  const matchingColor= {
+    backgroundColor: bgcolor,
+    color: color,
+};
+  if (isNaN(element)==false){
+    return (
+      <h1 className="App">The number is: {element}!</h1>
+    );
+  }
+  else 
+    return(
+      <h1 className="App" style={matchingColor}>The world is: {element}!</h1>
+    )
+}
+
+// const About = (props) => {
+//   return (
+//     <div>
+//       <h1 style={{color: "blue"}}>About Component</h1>
+//       <Link to={"/"}>Go Home</Link>
+//     </div>
+//   );
+// }
+
+
+    
+function App() {
+  return (
+    <div>
+{/* //       <h1>Routing Example</h1>
+//       <p>
+//         <Link to="/location/seattle">Seattle</Link>
+        
+//         <Link to="/location/chicago">Chicago</Link>
+        
+//         <Link to="/location/burbank">Burbank</Link>
+
+//       </p> */}
+       <Routes>
+         <Route path="/home" element={<Home />} />
+         <Route path="/:element/:bgcolor/:color" element={<RouteNum />} />
+       </Routes> 
+     </div>
+  );
+}
+    
+export default App
