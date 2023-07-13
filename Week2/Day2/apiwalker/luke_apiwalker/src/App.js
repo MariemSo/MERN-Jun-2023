@@ -1,10 +1,16 @@
-import './App.css';
-import Navbar from './components/Navbar.jsx';
+import "./App.css";
+import Form from "./components/Form";
+import People from "./components/People";
+import Planets from "./components/Planets";
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <Form />
+      <Routes>
+        <Route path="/people/:element" element={<People />} />
+        <Route path="/planets/:element" element={<Planets />} />
+      </Routes>
     </div>
   );
 }
